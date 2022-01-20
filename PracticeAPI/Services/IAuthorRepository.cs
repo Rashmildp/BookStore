@@ -9,6 +9,6 @@ namespace PracticeAPI.Services
    public interface IAuthorRepository
     {
         public List<Author> AllAuthors();
-        public Author getAuthor(int id);
+       
     }
 }

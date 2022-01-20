@@ -26,7 +26,7 @@ namespace PracticeAPI.Controllers
             _mapper = mapper;
            
         }
-        [HttpGet("{id?}")]
+        [HttpGet]
         public ActionResult<ICollection<AutorDto>> GetAuthotrs()
         {
             var authors = _authorService.AllAuthors();
@@ -36,10 +36,6 @@ namespace PracticeAPI.Controllers
         
 
         }
-        [HttpGet("{Id}")]
-        public IActionResult GetAuthor(int id)
-        {
-            var author=_authorService.
-        }
+   
     }
 }

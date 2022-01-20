@@ -35,13 +35,16 @@ namespace PracticeAPI.Services
             var author3 = new Author
             {
                 Id = 3,
-              FirstName = "Daniel Defoe",
+              FirstName = "Daniel",
               lastName= "Defoe",
+              country="England"
 
 
             };
             authors.Add(author3);
             return authors;
         }
+
+      
     }
 }
