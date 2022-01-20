@@ -1,3 +1,4 @@
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PracticeAPI.Dependency;
+using PracticeAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,12 +31,20 @@ namespace PracticeAPI
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PracticeAPI", Version = "v1" });
             });
+            services.AddOptions();
+          //  services.AddScoped<IbookRepositorycs, BookService>();
         }
 
+        public void ConfigureContainer(ContainerBuilder builder )
+        {
+            builder.RegisterModule(new DependencyRegister());
+
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

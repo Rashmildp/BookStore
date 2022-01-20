@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PracticeAPI.Services
 {
-    public class BookService
+    public class BookService : IbookRepository
     {
-        public List <Book> AllBooks()
+        public List <Book> AllBooks() 
         {
             var books = new List<Book>();
             var book1 = new Book

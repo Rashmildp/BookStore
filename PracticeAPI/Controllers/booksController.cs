@@ -12,10 +12,10 @@ namespace PracticeAPI.Controllers
     [ApiController]
     public class booksController : ControllerBase
     {
-        private BookService _bookService;
-        public booksController()
+        private readonly IbookRepository _bookService;
+        public booksController(IbookRepository repository)
         {
-            _bookService = new BookService();
+            _bookService = repository;
         }
         [HttpGet("{id?}")]
         public IActionResult GetBooks(int ? id)
