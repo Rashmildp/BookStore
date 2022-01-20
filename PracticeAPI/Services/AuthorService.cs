@@ -14,7 +14,10 @@ namespace PracticeAPI.Services
             var author1 = new Author
             {
                 Id = 1,
-                FullName= "J. K. Rowling"
+                FirstName= "J. K.",
+                lastName= "Rowling",
+                country= "England",
+               
 
             };
             authors.Add(author1);
@@ -22,16 +25,20 @@ namespace PracticeAPI.Services
             var author2 = new Author
             {
                 Id = 2,
-                FullName = "Jonathan Swift",
-              
+                FirstName = "Jonathan",
+                lastName= "Swift",
+                country= "Ireland",
+
 
             };
             authors.Add(author2);
             var author3 = new Author
             {
                 Id = 3,
-                FullName = "Daniel Defoe",
-             
+              FirstName = "Daniel",
+              lastName= "Defoe",
+              country="England"
+
 
             };
             authors.Add(author3);

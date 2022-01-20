@@ -8,6 +8,10 @@ namespace PracticeAPI.Services
 {
     public class BookService : IbookRepository
     {
+        public BookService()
+        {
+
+        }
         public List <Book> AllBooks() 
         {
             var books = new List<Book>();

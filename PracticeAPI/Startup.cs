@@ -37,6 +37,7 @@ namespace PracticeAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PracticeAPI", Version = "v1" });
             });
             services.AddOptions();
+            services.AddAutoMapper(typeof(Startup));
           //  services.AddScoped<IbookRepositorycs, BookService>();
         }
 
