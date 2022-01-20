@@ -12,7 +12,8 @@ namespace PracticeAPI.Profiles
     {
         public AuthorProfile()
         {
-            CreateMap<Author, AutorDto>().ReverseMap();
+            CreateMap<Author, AutorDto>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.lastName));
         }
     }
 }

@@ -9,9 +9,8 @@ namespace PracticeAPI.ViewModel
     {
         public int Id { get; set; }
      
-        public string FirstName { get; set; }
-        public string lastName { get; set; }
-
+        public string FullName { get; set; }
+    
 
         public string country { get; set; }
     }
