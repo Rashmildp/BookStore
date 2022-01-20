@@ -35,9 +35,8 @@ namespace PracticeAPI.Services
             var author3 = new Author
             {
                 Id = 3,
-              FirstName = "Daniel",
+              FirstName = "Daniel Defoe",
               lastName= "Defoe",
-              country="England"
 
 
             };

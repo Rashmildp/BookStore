@@ -27,16 +27,19 @@ namespace PracticeAPI.Controllers
            
         }
         [HttpGet("{id?}")]
-        public IActionResult GetAuthotrs(int? id)
+        public ActionResult<ICollection<AutorDto>> GetAuthotrs()
         {
             var authors = _authorService.AllAuthors();
             var authotDto = _mapper.Map<List<AutorDto>>(authors);
-           
-
-            if (id is null) return Ok(authotDto);
-            authotDto = authotDto.Where(t => t.Id == id).ToList();
             return Ok(authotDto);
 
+        
+
+        }
+        [HttpGet("{Id}")]
+        public IActionResult GetAuthor(int id)
+        {
+            var author=_authorService.
         }
     }
 }
