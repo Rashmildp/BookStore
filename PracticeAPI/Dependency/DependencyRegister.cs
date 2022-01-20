@@ -13,6 +13,7 @@ namespace PracticeAPI.Dependency
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<BookService>().As<IbookRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<AuthorService>().As<IAuthorRepository>().InstancePerLifetimeScope();
         }
 
     }

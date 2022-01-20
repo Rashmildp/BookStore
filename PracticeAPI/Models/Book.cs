@@ -10,7 +10,12 @@ namespace PracticeAPI.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string type { get; set; }
-        public string Author { get; set; }
+
         public int nOfOpages { get; set; }
+        public int AuthorId { get; set; }
+        public Author Author { get; set; }
+
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace PracticeAPI.Services
             {
                 Id = 1,
                 Name= "Harry Potter",
-                Author = "J.K. Rowling",
+                AuthorId = 1,
                 type = "Fantasy",
                 nOfOpages = 500
 
@@ -26,7 +26,7 @@ namespace PracticeAPI.Services
             {
                 Id = 2,
                 Name= "Gulliver’s Travels",
-                Author = "Jonathan Swift ",
+                AuthorId = 2,
                 type = "Adventure",
                 nOfOpages = 500
 
@@ -36,7 +36,7 @@ namespace PracticeAPI.Services
             {
                 Id = 3,
                 Name = " Robinson Crusoe ",
-                Author = "Daniel Defoe ",
+                AuthorId = 3,
                 type = "Adventure",
                 nOfOpages = 300
 
