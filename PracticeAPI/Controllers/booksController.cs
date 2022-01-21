@@ -10,22 +10,19 @@ namespace PracticeAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class booksController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly IbookRepository _bookService;
-        public booksController(IbookRepository repository)
+        public BooksController(IbookRepository repository)
         {
             _bookService = repository;
         }
-        [HttpGet("{id?}")]
-        public IActionResult GetBooks(int ? id)
+        [HttpGet]
+        public IActionResult GetBooks()
         {
             var mybooks = _bookService.AllBooks();
-
-            if (id is null) return Ok(mybooks);
-            mybooks = mybooks.Where(t => t.Id == id).ToList();
             return Ok(mybooks);
-
+         
         }
     }
 }

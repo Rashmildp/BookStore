@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PracticeAPI.Services
 {
-    public class AuthorService : IAuthorRepository
+    public class AuthorService 
     {
         public List<Author> AllAuthors()
         {

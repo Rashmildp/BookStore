@@ -1,10 +1,5 @@
 ﻿using Autofac;
 using PracticeAPI.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using System.Threading.Tasks;
 
 namespace PracticeAPI.Dependency
 {
@@ -12,8 +7,8 @@ namespace PracticeAPI.Dependency
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<BookService>().As<IbookRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<AuthorService>().As<IAuthorRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<BookSqlService>().As<IbookRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<AuthorSqlService>().As<IAuthorRepository>().InstancePerLifetimeScope();
         }
 
     }

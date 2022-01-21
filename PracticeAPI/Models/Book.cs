@@ -9,12 +9,10 @@ namespace PracticeAPI.Models
     public class Book
     {
         public int Id { get; set; }
-        [Required]
-        [MaxLength(20)]
+       
      
         public string Name { get; set; }
-        [Required]
-        [MaxLength(20)]
+      
         public string type { get; set; }
 
         public int nOfOpages { get; set; }

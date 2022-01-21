@@ -48,6 +48,11 @@ namespace PracticeAPI.Services
             books.Add(book3);
             return books;
         }
-        
+
+       
+      public  Book GetBook(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
