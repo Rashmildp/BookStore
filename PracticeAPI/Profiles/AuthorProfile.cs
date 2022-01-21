@@ -14,6 +14,7 @@ namespace PracticeAPI.Profiles
         {
             CreateMap<Author, AutorDto>()
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.lastName));
+            CreateMap<CreateAuthorDto, Author>();
         }
     }
 }

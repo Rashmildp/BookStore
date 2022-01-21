@@ -10,6 +10,9 @@ namespace PracticeAPI.Services
     {
         public List<Author> AllAuthors();
         public Author getAuthor(int id);
-       
+        public Author AddAuthor(Author author);
+        public void DeleteAuthor(Author author);
+
+
     }
 }

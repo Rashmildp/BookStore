@@ -24,5 +24,16 @@ namespace PracticeAPI.Controllers
             return Ok(mybooks);
          
         }
+        [HttpGet("{id}")]
+        public IActionResult GetBook(int id)
+        {
+           
+            var book = _bookService.GetBook(id);
+            if(book is null)
+            {
+                return NotFound();
+            }
+            return Ok(book);
+        }
     }
 }

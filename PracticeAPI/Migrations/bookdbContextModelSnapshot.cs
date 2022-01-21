@@ -83,8 +83,6 @@ namespace PracticeAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
                     b.ToTable("books");
 
                     b.HasData(
@@ -112,22 +110,6 @@ namespace PracticeAPI.Migrations
                             nOfOpages = 300,
                             type = "Adventure"
                         });
-                });
-
-            modelBuilder.Entity("PracticeAPI.Models.Book", b =>
-                {
-                    b.HasOne("PracticeAPI.Models.Author", "Author")
-                        .WithMany("books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Author");
-                });
-
-            modelBuilder.Entity("PracticeAPI.Models.Author", b =>
-                {
-                    b.Navigation("books");
                 });
 #pragma warning restore 612, 618
         }
