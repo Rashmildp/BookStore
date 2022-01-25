@@ -2,65 +2,23 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PracticeAPI.DataAceess;
 
 namespace PracticeAPI.Migrations
 {
     [DbContext(typeof(BookdbContext))]
-    partial class BookdbContextModelSnapshot : ModelSnapshot
+    [Migration("20220124072017_iniitial")]
+    partial class iniitial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("PracticeAPI.Models.Author", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Country = "England",
-                            FirstName = "J. K.",
-                            LastName = "Rowling"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Country = "Ireland",
-                            FirstName = "Jonathan",
-                            LastName = "Swift"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Country = "England",
-                            FirstName = "Daniel",
-                            LastName = "Defoe"
-                        });
-                });
 
             modelBuilder.Entity("PracticeAPI.Models.Book", b =>
                 {
@@ -82,8 +40,6 @@ namespace PracticeAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
 
@@ -112,17 +68,6 @@ namespace PracticeAPI.Migrations
                             nOfOpages = 300,
                             type = "Adventure"
                         });
-                });
-
-            modelBuilder.Entity("PracticeAPI.Models.Book", b =>
-                {
-                    b.HasOne("PracticeAPI.Models.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Author");
                 });
 #pragma warning restore 612, 618
         }

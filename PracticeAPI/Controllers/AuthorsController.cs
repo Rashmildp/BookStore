@@ -1,14 +1,13 @@
-﻿
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PracticeAPI.ViewModel;
+using PracticeAPI.Models;
 using PracticeAPI.Services;
+using PracticeAPI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PracticeAPI.Models;
-using AutoMapper;
 
 namespace PracticeAPI.Controllers
 {
@@ -60,13 +59,12 @@ namespace PracticeAPI.Controllers
 
 
         }
-
         [HttpDelete("{authorId}")]
 
         public ActionResult DeleteAuthor(int authorTd)
         {
             var deletingTodo = _authorService.getAuthor(authorTd);
-            if(deletingTodo is null)
+            if (deletingTodo is null)
             {
                 return NotFound();
             }
@@ -74,7 +72,5 @@ namespace PracticeAPI.Controllers
             return NoContent();
 
         }
-
-
     }
 }

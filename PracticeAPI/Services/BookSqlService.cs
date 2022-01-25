@@ -12,13 +12,13 @@ namespace PracticeAPI.Services
         private readonly BookdbContext _context = new BookdbContext();
         public List<Book> AllBooks()
         {
-            return _context.books.ToList();
+            return _context.Books.ToList();
             
         }
 
       public   Book GetBook(int id)
         {
-            return _context.books.Find(id);
+            return _context.Books.Find(id);
            
         }
     }
