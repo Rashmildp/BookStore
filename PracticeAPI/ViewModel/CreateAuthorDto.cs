@@ -7,10 +7,11 @@ namespace PracticeAPI.ViewModel
 {
     public class CreateAuthorDto
     {
-        public int Id { get; set; }
-        public string FullName { get; set; }
+     
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
 
-        public string country { get; set; }
+        public string Country { get; set; }
     }
 }

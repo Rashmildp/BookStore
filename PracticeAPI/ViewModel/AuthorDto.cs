@@ -12,6 +12,6 @@ namespace PracticeAPI.ViewModel
         public string FullName { get; set; }
     
 
-        public string country { get; set; }
+        public string Country { get; set; }
     }
 }

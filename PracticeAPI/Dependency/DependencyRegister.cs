@@ -8,7 +8,8 @@ namespace PracticeAPI.Dependency
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<BookSqlService>().As<IbookRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<AuthorSqlService>().As<IAuthorRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<AuthorSqlRepository>().As<IAuthorRepository>().InstancePerLifetimeScope();
+
         }
 
     }

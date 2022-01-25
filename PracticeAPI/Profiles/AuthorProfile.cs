@@ -13,7 +13,7 @@ namespace PracticeAPI.Profiles
         public AuthorProfile()
         {
             CreateMap<Author, AutorDto>()
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.lastName));
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName));
             CreateMap<CreateAuthorDto, Author>();
         }
     }
