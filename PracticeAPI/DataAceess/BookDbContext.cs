@@ -1,17 +1,41 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PracticeAPI.Models;
+using System.IO;
 
 namespace PracticeAPI.DataAceess
 {
     public class BookdbContext : DbContext
     {
+        public BookdbContext()
+        {
+        }
+
+        public BookdbContext(DbContextOptions<BookdbContext> options) : base(options)
+
+
+        {
+
+        }
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
-   
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    var connectionString = "server=RASHMI-D ; Database=BOOKSTORE; User Id=ras; Password=12345";
+        //    optionsBuilder.UseSqlServer(connectionString);
+        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "server=RASHMI-D ; Database=BOOKSTORE; User Id=ras; Password=12345";
-            optionsBuilder.UseSqlServer(connectionString);
+            if (!optionsBuilder.IsConfigured)
+            {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                   .SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json")
+                   .Build();
+                var connectionString = configuration.GetConnectionString("BookStoreDB");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
