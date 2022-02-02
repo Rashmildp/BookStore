@@ -14,7 +14,7 @@ This API was created to get better understanding about ASP.NET CORE.
 Install these required libraries using **Manage Nuget Packages**
 ```bash
 Autofac.Extensions.DependencyInjection 
- AutoMapper.Extensions.Microsoft.DependencyInjection
+AutoMapper.Extensions.Microsoft.DependencyInjection
 
 
 ```
