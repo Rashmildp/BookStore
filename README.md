@@ -9,6 +9,9 @@ This API was created to get better understanding about ASP.NET CORE.
 1. [.NET core and version](https://dotnet.microsoft.com/en-us/download) 5
 2. Visual studio
 
+There is [Swagger Client](https://swagger.io/tools/swagger-codegen/) available 💖. 
+![swagger](https://user-images.githubusercontent.com/64850016/152136249-79eccb9f-38e9-4a04-b3c0-66c9f1e90657.png)
+
 ## Installation
 
 Install these required libraries using **Manage Nuget Packages**
