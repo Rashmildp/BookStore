@@ -62,7 +62,33 @@ Dependency Injection (DI) is a design pattern in ASP.NET Core that allows for th
     }
 }
 ```
+3. Register the service with the DI container in Startup.cs:
+```bash
+ public void ConfigureServices(IServiceCollection services)
+{
+    services.AddTransient<IExampleService, ExampleService>();
+}
 
+```
+4. Inject the service into a controller:
+5.```bash
+public class ExampleController : Controller
+{
+    private readonly IExampleService _exampleService;
+
+    public ExampleController(IExampleService exampleService)
+    {
+        _exampleService = exampleService;
+    }
+
+    public IActionResult DoWork()
+    {
+        _exampleService.DoWork();
+        return View();
+    }
+}
+```
+_**In this example, the ExampleController class does not need to know about the implementation of the ExampleService class. Instead, the DI container will resolve the ExampleService class and provide it to the ExampleController class when it is requested. This allows for greater flexibility and modularity, as the implementation of the ExampleService class can be changed or swapped out without affecting the ExampleController class.**_
 
 ## Development
 
