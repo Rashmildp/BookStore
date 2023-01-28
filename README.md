@@ -71,7 +71,7 @@ Dependency Injection (DI) is a design pattern in ASP.NET Core that allows for th
 
 ```
 4. Inject the service into a controller:
-5.```bash
+```bash
 public class ExampleController : Controller
 {
     private readonly IExampleService _exampleService;
