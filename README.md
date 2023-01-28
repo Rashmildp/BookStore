@@ -27,8 +27,8 @@ On Terminal, run to check .NET version
 ```
 
 
-##
-
+## Inversion of control (IoC)
+Inversion of control (IoC) is a design principle in computer software where the control flow of a program is inverted, meaning that the code that calls a module or function is separated from the code that is executed. This allows for greater flexibility and modularity, as the code that is executed can be replaced or customized without affecting the code that calls it. IoC is often used in the context of dependency injection, where an external framework or library provides the dependencies for a module or object, rather than the module or object declaring and instantiating its own dependencies.
 
 ## Development
 
